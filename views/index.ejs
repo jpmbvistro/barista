@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <%- include('./partials/head.ejs') %>
+  <body>
+    <section class='main flex-container flex-column'>
+      <h1>Roulette!</h1>
+      <section class='winnings-display flex-container'>
+        <h2>Total Winnings: $<span class='winnings'></span></h2>
+      </section>
+      <section class='flex-container game panel'>
+        <section class='bets flex-container flex-column'>
+          <div class="bet-container">
+            <button id='submitBet' class='submit-bet' type="submit" name="button">Submit</button>
+          </div>
+          <div class="color">
+            <h3>2-1</h3>
+            <div class="flex-container">
+              <label for="bet-black">
+                Black:
+                <input type="number" name="bet-black" placeholder='Bet on Black' value="" min='.01'>
+              </label>
+              <label for="bet-red">
+                Red:
+                <input type="number" name="bet-red" placeholder='Bet on red' value="" min='.01'>
+              </label>
+            </div>
+          </div>
+        </section>
+        <section class='roulette-board'>
+          <img src="img/game.png" alt="boardgame">
+        </section>
+      </section>
+      <div class="admin-login">
+        <button id='admin-login-button' class='admin-login-button' type="button" name="button"></button>
+      </div>
+    </section>
+  </body>
+</html>

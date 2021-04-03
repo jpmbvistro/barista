@@ -1,0 +1,10 @@
+.completeDrink,
+.clearDrink {
+  padding: .5rem;
+  font-size: 1rem;
+  border: .25rem solid rgba(255, 190, 153,1);
+  margin: .5rem;
+  border-radius: 2rem;
+  box-shadow: 2px 5px 0 0px rgba(255, 151, 92, 1);
+  cursor: pointer;
+}

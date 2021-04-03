@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <%- include('./partials/head.ejs') %>
+  <body>
+    <section class='main flex-container flex-column'>
+      <h1>All Drinks, Ever</h1>
+      <table>
+        <% if(drinks) { %>
+        <thead>
+          <tr>
+            <th>Cust.</th>
+            <th>Order</th>
+            <th>Barista</th>
+          </tr>
+        </thead>
+        <tbody>
+
+            <% for(let i = 0 ; i<drinks.length;i++) { %>
+            <tr>
+              <td><%= drinks[i].name%></td>
+              <td><%= drinks[i].drink%></td>
+              <td><%= drinks[i].barista%></td>
+            </tr>
+            <% } %>
+
+        </tbody>
+        <% } %>
+      </table>
+      <%- include('./partials/back-button.ejs') %>
+    </section>
+    <script type="text/javascript" src='./js/barista.js'></script>
+  </body>
+</html>

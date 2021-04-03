@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <%- include('./partials/head.ejs') %>
+  <body>
+    <link rel="stylesheet" href="/css/barista.css">
+    <section class='main flex-container flex-column'>
+      <h1>Ongoing Drinks</h1>
+      <ul class='flex-container flex-wrap'>
+        <% for(let i = 0 ; i < drinks.length ; i++) { %>
+        <li class='drink-order module order-module <% if(drinks[i].complete) { %> complete <% } %>'>
+          <span class='name'><%= drinks[i].name %> </span>
+          <span class='drink'><%= drinks[i].drink %></span>
+          <% if(drinks[i].complete) { %>
+          <p>Completed by <span class='barista'> <%= drinks[i].barista %> </span></p>
+          <% } %>
+          <input class='id'type="hidden" name="_id" value="<%= drinks[i]._id %>">
+          <input class='isComplete'type="hidden" name="complete" value="<%= drinks[i].complete %>">
+          <div class="flex-container flex-wrap">
+            <button class='completeDrink' type="submit" name="submit"><% if(drinks[i].complete) { %> Undo <% } else { %> Complete <% } %></button>
+
+            <button class='clearDrink'<% if(drinks[i].complete===false) { %> disabled <% } %> type="text" name="" value="clear">Clear</button>
+          </div>
+
+
+
+        </li>
+        <% } %>
+      </ul>
+      <%- include('./partials/back-button.ejs') %>
+    </section>
+    <script type="text/javascript" src='./js/barista.js'></script>
+  </body>
+</html>
